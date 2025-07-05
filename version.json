@@ -1,6 +1,6 @@
 ﻿{
-    "version": "3,24,1,0",
-    "date": "25,6,28,1",
-    "link": "https://gitee.com/hupo510/note-serial/releases/download/V1.0/NoteSerialSetup.exe",
-    "contents": "整理发布的第一个版本"
+    "version": "3,24,1,1",
+    "date": "25,7,5,12",
+    "link": "https://gitee.com/hupo510/note-serial/releases/download/V1.1/NoteSerialSetup.exe",
+    "contents": "实现软件的升级功能"
 }
