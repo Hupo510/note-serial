@@ -1,6 +1,6 @@
 ﻿{
-    "version": "3,24,1,1",
-    "date": "25,7,5,12",
-    "link": "https://gitee.com/hupo510/note-serial/releases/download/V1.1/NoteSerialSetup.exe",
-    "contents": "实现软件的升级功能"
+    "version": "3,24,1,2",
+    "date": "25,7,20,12",
+    "link": "https://gitee.com/hupo510/note-serial/releases/download/V1.2/NoteSerialSetup.exe",
+    "contents": "修复结果展示窗口当一行存在多条结果时的显示错位问题\n修复展示结果首页追加时不进行标记的问题\n优化日志显示窗口的输入法禁用\n修复查找工具栏中文搜索乱码的问题\n完善lua的C功能库\n将右键的转换功能切换为lua脚本插件实现"
 }
