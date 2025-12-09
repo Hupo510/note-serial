@@ -2,5 +2,5 @@
     "version": "3,24,1,5",
     "date": "25,12,9,9",
     "link": "https://gitee.com/hupo510/note-serial/releases/download/V1.5/NoteSerialSetup.exe",
-    "contents": "修复多行发送的注释文本修改后保存错乱的问题\实现日志文件拖入图标打开日志查看器的功能\优化系统休眠后的串口设备插入拔出检测与自动打开的功能"
+    "contents": "修复多行发送的注释文本修改后保存错乱的问题\n实现日志文件拖入图标打开日志查看器的功能\n优化系统休眠后的串口设备插入拔出检测与自动打开的功能"
 }
