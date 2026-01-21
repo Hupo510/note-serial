@@ -1,0 +1,118 @@
+## Lua内部模块及函数
++ **event**：事件模块，提供事件注册功能。
+    + register(name,func)：注册事件回调函数。
+        + name：事件名称。
+        + func：事件回调函数。
+    + unregister(name)：注销事件回调函数。
+        + name：事件名称。
++ **comx**：串口模块，提供串口操作函数。
+    + ports()：列出所有可用串口端口。
+    + open(port,baudrate)：打开指定串口端口。
+        + port：串口端口名称。
+        + baudrate：波特率。
+    + close()：关闭已打开的串口端口。
+    + write(data)：向已打开的串口端口写入数据。
+        + data：要写入的数据。
++ **note**：主日志窗口操作模块
+    + length()：返回主日志窗口显示的文本长度。
+    + append(text)：在主日志窗口追加文本。
+        + text：要追加的文本。
+    + clear()：清空主日志窗口显示的文本。
+    + selection()：返回主日志窗口当前选中的文本。
+    + clrlexer()：清空主日志窗口的语法分析规则。
+    + setlexer(lexer)：设置主日志窗口的语法分析规则。
+        + lexer：语法分析规则，为一个table，包含如下键名：
+            + Rule：规则字符串
+            + MatchCase：匹配大小写
+            + WholeWord：全词匹配
+            + Regexp：正则表达式
+            + Foreground：前景颜色
+            + Background：背景颜色
+            + Bold：粗体
+            + Italic：斜体
+            + Underline：下划线
++ **regex**：正则表达式模块，提供正则表达式操作函数。
+    + match(pattern, text, [,anchor [,flags]])：匹配文本是否符合正则表达式。
+        + pattern：正则表达式模式。
+        + text：要匹配的文本。
+        + anchor：可选参数，指定是否从文本开头开始匹配。
+        + flags：可选参数，指定匹配标志。
+    + search(pattern, text, [,flags])：搜索文本中符合正则表达式的子字符串。
+        + pattern：正则表达式模式。
+        + text：要搜索的文本。
+        + flags：可选参数，指定搜索标志。
++ **sys**：系统模块，提供系统操作函数。
+    + msgbox(type, title, message)：显示一个消息框。
+        + type：消息框类型，可选值为"error"、"query"。
+        + title：消息框标题。
+        + message：消息框显示的文本。
+    + utf82acp(utf8str)：将UTF-8编码的字符串转换为ACP编码的字符串。
+        + utf8str：UTF-8编码的字符串。
+    + acp2utf8(acpstr)：将ACP编码的字符串转换为UTF-8编码的字符串。
+        + acpstr：ACP编码的字符串。
++ **convert**：转换模块，提供字符串编码转换函数。
+    + register(function, name [,strip])：注册一个字符串编码转换函数。
+        + function：转换函数，接受一个字符串参数，返回转换后的字符串。
+        + name：转换函数的名称。
+        + strip：可选参数，为真，代码块将不包含该函数的调试信息。
+    + subitem(name)：创建一个子项。
+        + name：子项名称。
+    + clean()：清空所有项。
+    + call(index,input)：调用指定索引的转换函数。
+        + index：转换函数的索引。
+        + input：要转换的字符串。
++ **bytearray**：字节数组模块，提供字节数组操作函数。
+    + new()：创建一个新的字节数组。
+        + 返回：字节数组对象。
+    + len(self)：返回字节数组的长度。
+        + self：字节数组对象。
+    + str(self)：将字节数组转换为字符串。
+        + self：字节数组对象。
+    + hex(self,uppercase,withspace,maxlinelen)：将字节数组转换为十六进制字符串。
+        + self：字节数组对象。
+        + uppercase：可选参数，为真，十六进制字符串将使用大写字母。
+        + withspace：可选参数，为真，十六进制字符串将包含空格。
+        + maxlinelen：可选参数，指定每行十六进制字符串的最大长度。
+    + write(self, value)：向字节数组写入数据。
+        + self：字节数组对象。
+        + value：要写入的数据。
+    + slice(self, start, end)：返回字节数组的子数组。
+        + self：字节数组对象。
+        + start：子数组的起始索引。
+        + end：子数组的结束索引。
+    + fromhex(str)：从十六进制字符串创建字节数组。
+        + str：十六进制字符串。
+        + 返回：字节数组对象。
+    + frombase64(str)：从Base64字符串创建字节数组。
+        + str：Base64字符串。
+        + 返回：字节数组对象。
+    + pack([self], format, ...)：将多个值打包为字节数组。
+        + self：可选参数，字节数组对象。
+        + format：打包格式字符串，参考Lua的string.pack函数。
+        + ...：要打包的值。
+        + 返回：字节数组对象。
+    + unpack(self|str, format)：从字节数组或字符串解包多个值。
+        + self|str：字节数组对象或字符串。
+        + format：解包格式字符串，参考Lua的string.unpack函数。
+        + 返回：解包的值。
++ **python**：Python模块，提供Python操作函数。
+    + execute(statement)：执行Python语句。
+        + statement：要执行的Python语句。
+    + eval(expression)：执行Python表达式。
+        + expression：要执行的Python表达式。
+        + 返回：表达式的结果。
+    + globals()：返回Python全局变量表。
+    + locals()：返回Python局部变量表。
+    + builtins()：返回Python内建函数表。
+    + import(name)：导入Python模块。
+        + name：要导入的模块名称。
+        + 返回：导入的模块对象。
+    + asattr(pyobj)：将Python对象转换为属性访问对象。
+        + pyobj：Python对象。
+        + 返回：属性访问对象。
+    + asindx(pyobj)：将Python对象转换为索引访问对象。
+        + pyobj：Python对象。
+        + 返回：索引访问对象。
+    + asfunc(pyobj)：将Python对象转换为函数访问对象。
+        + pyobj：Python对象。
+        + 返回：函数访问对象。
