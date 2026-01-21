@@ -24,6 +24,7 @@ NoteSerial具体功能如下：（部分还在开发完善中，敬请期待）
 + [Lua内部模块及函数说明文档](./LuaDoc.md)
 + Lua的工作目录请打开软件点击右下角的`管理`->`打开AppData文件夹`，在打开的文件夹中的script子目录下
 + lua或python脚本插件请放到script子目录下，python最好以模块文件夹的形式组织，init.lua为模块的入口文件，编写初始化与注册的代码，程序会自动扫描加载
++ python扩展需要宿主机中有安装python环境，且python版本必须大于3.7版本，程序会自动扫描Path环境变量中的首个python.exe路径，作为python解释器。
 
 # 截图
 
